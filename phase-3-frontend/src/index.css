@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  background: var(--background);
+  min-height: 100vh;
+  margin: .5rem auto;
+  color: var(--font-color);
+  box-shadow: 4px;
+}
+
+.App.dark {
+  background-color: black;
+  color: white;
+}
