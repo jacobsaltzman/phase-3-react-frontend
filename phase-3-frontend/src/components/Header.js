@@ -14,8 +14,8 @@ const Header = ({handleDarkMode, isDarkMode}) => {
             Horror Rater
           </h1>
           <div className="navbar">
-            
             <Link to="/">Home</Link>
+            <Link to="/movies">Movies</Link>
             
           </div>
         </div>
