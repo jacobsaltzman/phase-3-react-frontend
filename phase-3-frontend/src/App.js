@@ -9,11 +9,16 @@ import Signin from './components/Signin';
 
 function App() {
 
+  const [movies, setMovies] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
 
   function handleDarkMode(e){
     setIsDarkMode(!isDarkMode)
+  }
+
+  function onAddMovie(newMovie){
+    setMovies([...movies, newMovie])
   }
 
 
@@ -31,7 +36,7 @@ function App() {
           <Signin />
         </Route>
         <Route path='/new'>
-          <NewMovieForm />
+          <NewMovieForm onAddMovie={onAddMovie}/>
         </Route>
       </Switch>
     </div>
