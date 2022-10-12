@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Movies from './components/Movies';
+import NewMovieForm from './components/NewMovieForm';
 import Signin from './components/Signin';
 
 
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path='/signin'>
           <Signin />
+        </Route>
+        <Route path='/new'>
+          <NewMovieForm />
         </Route>
       </Switch>
     </div>
