@@ -16,6 +16,7 @@ const Header = ({handleDarkMode, isDarkMode}) => {
           <div className="navbar">
             <Link to="/">Home</Link>
             <Link to="/movies">Movies</Link>
+            <Link to="/signin">Sign In</Link>
             
           </div>
         </div>
