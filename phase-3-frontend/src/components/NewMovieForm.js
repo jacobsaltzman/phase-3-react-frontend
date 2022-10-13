@@ -52,7 +52,7 @@ function NewMovieForm({ onAddMovie }){
     <section>
       <h3>Is there a new movie or a gem we missed?!</h3>
       <p>It can be challenging to keep up with every new movie or finding solid classics... <br/>Adding new movies to our site helps our users learn more about new and interesting movies!</p>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="new-movie-form" onSubmit={handleSubmit}>
         <h3>Add New Movie</h3>
 
         <label>Title</label>

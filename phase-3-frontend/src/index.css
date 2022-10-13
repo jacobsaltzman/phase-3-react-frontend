@@ -29,7 +29,7 @@ code {
   border-radius: 10px;
 }
 
-.form {
+.new-movie-form {
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ section {
   
 }
 
-.form button {
+.new-movie-form button {
   width: 75px;
   margin-top: 15px;
   text-align: center;
@@ -59,7 +59,7 @@ section {
   border-radius: 15px;
 }
 
-.form h3 {
+.new-movie-form h3 {
   margin-bottom: 1rem;
   text-align: center;
  
@@ -83,4 +83,11 @@ section {
   left: 0;
   width: 100%;
   text-align: right;
+}
+
+#signin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
