@@ -6,7 +6,7 @@ function Home(){
       <p>
         
       </p>
-      <h4>-Jacob Saltzman, Flatiron School 2022</h4>
+      
 
     </section>
   )

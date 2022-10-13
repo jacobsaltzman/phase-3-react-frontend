@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Switch, Route} from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
 import Movies from './components/Movies';
@@ -39,6 +40,7 @@ function App() {
           <NewMovieForm onAddMovie={onAddMovie}/>
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
