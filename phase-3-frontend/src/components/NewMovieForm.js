@@ -8,9 +8,10 @@ function NewMovieForm({ onAddMovie }){
     director: "",
     type: "",
     year: "",
-    blurb: "",
-    image: "https://giphy.com/embed/d3mlGIM8WBQbQfVC",
-    trailer: ""
+    comments: "",
+    image: "",
+    user_rating: "",
+    rotton_percentage: ""
   })
 
   function handleChange(e) {
@@ -37,8 +38,11 @@ function NewMovieForm({ onAddMovie }){
           director: "",
           type: "",
           year: "",
-          blurb: "",
-          image: "https://giphy.com/embed/d3mlGIM8WBQbQfVC"
+          comments: "",
+          image: "",
+          user_rating: 0,
+          rotton_percentage: "",
+          scare_scale: 0
         });
       });
       alert("Added to the Movies DB! Thanks for contributing");
@@ -67,6 +71,7 @@ function NewMovieForm({ onAddMovie }){
           <option value="SciFi">Sci-fi</option>
           <option value="Gore">Gore</option>
           <option value="Monster">Monster</option>
+          <option value="Mystery">Mystery/Thriller</option>
           <option value="FF">Found Footage</option>
           <option value="Other">Other</option>
         </select>
@@ -74,8 +79,12 @@ function NewMovieForm({ onAddMovie }){
         <label>Year</label>
         <input type="number" id="year" name="year" onChange={handleChange} value={formData.year}/>
 
-        <label>About</label>
-        <textarea onChange={handleChange} value={formData.about}/>
+        <label>Comments</label>
+        <textarea onChange={handleChange} value={formData.comments}/>
+
+        <label>Image URL</label>
+        <input type="text" id="image" name="image" onChange={handleChange} value={formData.image}></input>
+
 
         <button type="submit">Add Movie</button>
       </form>
