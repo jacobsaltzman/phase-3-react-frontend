@@ -7,6 +7,7 @@ const Header = ({handleDarkMode, isDarkMode}) => {
   return(
     <header className="App-header">
       <div id="dark-button">
+      <Link to="/signin">Sign In</Link>
           <button onClick={handleDarkMode}>{isDarkMode? 'Darkmode 🌙': 'Lightmode ☀️'} </button>
       </div>
         <div className="navbar-header">
@@ -16,7 +17,6 @@ const Header = ({handleDarkMode, isDarkMode}) => {
           <div className="navbar">
             <Link to="/">Home</Link>
             <Link to="/movies">Movies</Link>
-            <Link to="/signin">Sign In</Link>
             <Link to="/new">Add A Scare</Link>
             
           </div>

@@ -1,7 +1,7 @@
 function Movies(){
 
   return(
-    <div>
+    <div id='main-movie-list'>
       <h2>The comprehensive list of horror movies.</h2>
     </div>
   )
