@@ -17,8 +17,9 @@ function Home(){
       <p>
         
       </p>
+      <div id="sign-up">
       <h4>Sign Up</h4>
-      <form id="sign-up-form">
+      <form  id="sign-up-form">
         <label>Email: </label>
         <input type='email'></input>
       <label>Username: </label>
@@ -26,11 +27,11 @@ function Home(){
       <div>
       <label>Password: </label>
       <input type={pwShown ? "text" : "password"}></input>
-      <button onClick={togglePassword}>{pwShown ? "🙈" : '👀'}</button>
+      <button id="pw-button" onClick={togglePassword}>{pwShown ? "🙈" : '👀'}</button>
       </div>
       <button type="submit">Create New User</button>
       </form>
-
+      </div>
     </section>
   )
 
