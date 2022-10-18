@@ -122,6 +122,9 @@ section {
 }
 
 #sign-up{
-  padding-top: 15rem;
+  padding-top: 1rem;
+  border-style: groove;
+  border-radius: 10px;
+
 }
 

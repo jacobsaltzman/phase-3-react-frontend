@@ -14,9 +14,6 @@ function Home(){
   return (
     <section>
       <h2>A scary movie DB.</h2>
-      <p>
-        
-      </p>
       <div id="sign-up">
       <h4>Sign Up</h4>
       <form  id="sign-up-form">
