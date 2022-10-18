@@ -1,4 +1,15 @@
+import { React, useState } from "react";
+
+
 function Home(){
+
+  const [pwShown, setPwShown] = useState(false);
+
+  const togglePassword = (e) => {
+    e.preventDefault();
+    setPwShown(!pwShown)
+  }
+
 
   return (
     <section>
@@ -8,13 +19,16 @@ function Home(){
       </p>
       <h4>Sign Up</h4>
       <form id="sign-up-form">
-        <label>Email:</label>
+        <label>Email: </label>
         <input type='email'></input>
-      <label>Username:</label>
+      <label>Username: </label>
       <input type='text'></input>
-      <label>Password:</label>
-      <input type='password'></input>
-      <button type="submit">Submit</button>
+      <div>
+      <label>Password: </label>
+      <input type={pwShown ? "text" : "password"}></input>
+      <button onClick={togglePassword}>{pwShown ? "🙈" : '👀'}</button>
+      </div>
+      <button type="submit">Create New User</button>
       </form>
 
     </section>
