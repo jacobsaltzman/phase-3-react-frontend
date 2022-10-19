@@ -74,7 +74,7 @@ section {
 }
 
 #footer {
-  position: fixed;
+  position: relative;
   /* negative value of footer height */
   height: 180px;
   background-color: red;
