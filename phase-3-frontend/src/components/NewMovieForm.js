@@ -8,10 +8,7 @@ function NewMovieForm({ onAddMovie }){
     director: "",
     type: "",
     year: "",
-    comments: "",
-    image: "",
-    user_rating: "",
-    rotton_percentage: ""
+    image: ""
   })
 
   function handleChange(e) {
@@ -38,11 +35,7 @@ function NewMovieForm({ onAddMovie }){
           director: "",
           type: "",
           year: "",
-          comments: "",
-          image: "",
-          user_rating: 0,
-          rotton_percentage: "",
-          scare_scale: 0
+          image: ""
         });
       });
       alert("Added to the Movies DB! Thanks for contributing");
@@ -66,12 +59,12 @@ function NewMovieForm({ onAddMovie }){
           <option>Select One</option>
           <option value="Paranormal">Paranormal</option>
           <option value="Slasher">Slasher</option>
-          <option value="Psychological">Psychological</option>
+          <option value="Psych">Psychological</option>
           <option value="Comedy">Comedy</option>
           <option value="SciFi">Sci-fi</option>
           <option value="Gore">Gore</option>
           <option value="Monster">Monster</option>
-          <option value="Mystery">Mystery/Thriller</option>
+          <option value="Mystery/Thriller">Mystery/Thriller</option>
           <option value="FF">Found Footage</option>
           <option value="Other">Other</option>
         </select>
