@@ -19,7 +19,7 @@ function NewMovieForm({ onAddMovie }){
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:9292/test", {
+    fetch("http://localhost:9292/movie", {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ function NewMovieForm({ onAddMovie }){
         <input type="text" id="director" name="director" onChange={handleChange} value={formData.director}/>
 
         <label>Subgenre</label>
-        <select name="type" id="type" onChange={handleChange} value={formData.type}>
+        <select name="subgenre" id="subgenre" onChange={handleChange} value={formData.subgenre}>
           <option>Select One</option>
           <option value="Paranormal">Paranormal</option>
           <option value="Slasher">Slasher</option>
@@ -71,9 +71,6 @@ function NewMovieForm({ onAddMovie }){
 
         <label>Year</label>
         <input type="number" id="year" name="year" onChange={handleChange} value={formData.year}/>
-
-        <label>Comments</label>
-        <textarea onChange={handleChange} value={formData.comments}/>
 
         <label>Image URL</label>
         <input type="text" id="image" name="image" onChange={handleChange} value={formData.image}></input>
