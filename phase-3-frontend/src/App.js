@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -12,6 +12,12 @@ function App() {
 
   const [movies, setMovies] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/movies")
+      .then((r) => r.json())
+      .then((data)=> setMovies(data))
+  }, [])
 
 
   function handleDarkMode(e){
@@ -31,7 +37,7 @@ function App() {
           <Home />
         </Route>
         <Route path='/movies'>
-          <Movies />
+          <Movies movies={movies}/>
         </Route>
         <Route path='/signin'>
           <Signin />
