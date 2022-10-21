@@ -6,7 +6,7 @@ function NewMovieForm({ onAddMovie }){
   const[formData, setFormData] = useState({
     title: "",
     director: "",
-    type: "",
+    subgenre: "",
     year: "",
     image: ""
   })
@@ -19,7 +19,7 @@ function NewMovieForm({ onAddMovie }){
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:9292/movie", {
+    fetch("http://localhost:9292/movies", {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ function NewMovieForm({ onAddMovie }){
         setFormData({
           title: "",
           director: "",
-          type: "",
+          subgenre: "",
           year: "",
           image: ""
         });
