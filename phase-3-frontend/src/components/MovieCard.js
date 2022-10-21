@@ -9,8 +9,8 @@ function MovieCard({movie}){
       <h3>{title}</h3>
       <iframe src={image} className="movie-image" allowFullScreen title={title}></iframe>
       <h4>Directed by: {director}</h4> 
-      <button id="delete-button">Remove from List</button>
       <p>{title} is a {subgenre} horror movie, originally released in {year}</p>
+      <button id="review-button">Add a Review!</button>
     </div>
   )
 }
