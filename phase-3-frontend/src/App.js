@@ -6,12 +6,15 @@ import Home from './components/Home';
 import Movies from './components/Movies';
 import NewMovieForm from './components/NewMovieForm';
 import Signin from './components/Signin';
+import Reviews from './components/Reviews';
 
 
 function App() {
 
   const [movies, setMovies] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [reviews, setReviews] = useState([]);
+
 
   useEffect(() => {
     fetch("http://localhost:9292/movies")
@@ -26,6 +29,10 @@ function App() {
 
   function onAddMovie(newMovie){
     setMovies([...movies, newMovie])
+  }
+
+  function onAddReview(newReview){
+    setReviews([...reviews, newReview])
   }
 
 
@@ -43,7 +50,10 @@ function App() {
           <Signin />
         </Route>
         <Route path='/new'>
-          <NewMovieForm onAddMovie={onAddMovie}/>
+          <NewMovieForm onAddMovie={onAddMovie} onAddReview={onAddReview}/>
+        </Route>
+        <Route path='/reviews'>
+          <Reviews reviews={reviews}/>
         </Route>
       </Switch>
       <Footer />
