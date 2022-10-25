@@ -22,6 +22,12 @@ function App() {
       .then((data)=> setMovies(data))
   }, [])
 
+  useEffect(() => {
+    fetch("http://localhost:9292/reviews")
+      .then((r) => r.json())
+      .then((data)=> setReviews(data))
+  }, [])
+
 
   function handleDarkMode(e){
     setIsDarkMode(!isDarkMode)
