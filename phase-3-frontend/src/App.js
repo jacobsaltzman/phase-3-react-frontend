@@ -7,6 +7,7 @@ import Movies from './components/Movies';
 import NewMovieForm from './components/NewMovieForm';
 import Signin from './components/Signin';
 import Reviews from './components/Reviews';
+import NewReviewForm from './components/NewReviewForm';
 
 
 function App() {
@@ -56,10 +57,13 @@ function App() {
           <Signin />
         </Route>
         <Route path='/new'>
-          <NewMovieForm onAddMovie={onAddMovie} onAddReview={onAddReview}/>
+          <NewMovieForm onAddMovie={onAddMovie}/>
         </Route>
         <Route path='/reviews'>
           <Reviews reviews={reviews}/>
+        </Route>
+        <Route path='/review/new'>
+          <NewReviewForm onAddReview={onAddReview}/>
         </Route>
       </Switch>
       <Footer />
