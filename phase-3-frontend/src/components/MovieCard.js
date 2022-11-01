@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function MovieCard({movie}){
 
@@ -20,7 +21,7 @@ function MovieCard({movie}){
       <h1>{title}</h1>
       <h3>Directed by: {director}</h3> 
       <p>{title} is a {subgenre} horror movie, originally released in {year}</p>
-      <button id="review-button">Add a Review!</button>
+      <Link to="review/new" id="review-button">Add A Review</Link>
       <div className="background" style={sectionStyle}></div>
     </div>
   )
