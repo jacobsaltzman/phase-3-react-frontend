@@ -128,3 +128,20 @@ section {
 
 }
 
+.review-card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 2px solid;
+  border-radius: 10px;
+  border-bottom: 5px solid;
+  position: relative; /* or absolute */
+}
+
+.review-card button{
+  width: 20px;
+  color: red;
+  border: none;
+  
+}
