@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Phase 3 Project Horror Rater -- Frontend UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is it?
 
-## Available Scripts
+- A comprehensive list of horror movies with details for each, including director, release date, and sub-genre. Among that list, movies can have reviews where "users" post comments and ratings, both on overall quality of the film and the scariness factor.
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+This project's focus is **Ruby** and OOP in which I **built a Sinatra API backend** that uses
+**Active Record** to access and persist data in a database, which is used
+by a separate **React frontend** that interacts with the database via the API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For this project, you can see:
 
-### `npm test`
+[✔️] Use Active Record to interact with a database.
+[✔️] Have at least two models with a one-to-many relationship.
+[✔️] At a minimum, set up the following API routes in Sinatra:
+  - create and read actions for both models
+  - full CRUD capability for one of the models
+[✔️] Build a separate React frontend application that interacts with the API to
+  perform CRUD actions.
+[✔️] Implement proper front end state management. You should be updating state using a
+  setState function after receiving your response from a POST, PATCH, or DELETE 
+  request. You should NOT be relying on a GET request to update state. 
+[✔️] Use good OO design patterns. You should have separate classes for each of your
+  models, and create instance and class methods as necessary. 
+[✔️] Routes in your application (both client side and back end) should follow RESTful
+  conventions.
+[✔️] Use your back end optimally. Pass JSON for related associations to the front 
+  end from the back end. You should use active record methods in your controller to grab
+  the needed data from your database and provide as JSON to the front end. You
+  should NOT be relying on filtering front end state or a separate fetch request to
+  retrieve related data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application uses a React frontend interface and a
+Sinatra backend API, where a user can:
 
-### `npm run build`
+- **Create** a new review or add a movie to the list
+- **Read** a list of all movies and review
+- **Update** an individual review
+- **Delete** a review
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A `Review` can be tagged with a `User`, so that each review _belongs to_ a
+user and each user _has many_ reviews.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend Setup
 
-### `npm run eject`
+You can start your server with:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```console
+$ bundle exec rake server
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will run your server on port
+[http://localhost:9292](http://localhost:9292).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This repository has all the starter code needed to get a Sinatra backend up and
+running. Run `bundle install` to install the gems.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Frontend Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The React app lives in a different repository in a **separate folder** with a for the
+frontend. To view this, `cd` out of the backend project directory and into the React frontend. Once there, run:
 
-### Code Splitting
+```console
+$ npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After starting the project locally, you should be able to view it at
+[http://localhost:3000].
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Extras
 
-### Making a Progressive Web App
+- This project is intended to focus more on the backend than the frontend. It mainly focuses on working with
+  Active Record and performing CRUD actions.
+- Future additions would be to include user login authentication.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [create-react-app][]
+- [dbdiagram.io][]
+- [Postman][postman download]
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[create-react-app]: https://create-react-app.dev/docs/getting-started
+[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
+[dbdiagram.io]: https://dbdiagram.io/
+[postman download]: https://www.postman.com/downloads/
+[network tab]: https://developer.chrome.com/docs/devtools/network/
