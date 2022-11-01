@@ -45,7 +45,7 @@ function NewReviewForm({ onAddReview }){
         <textarea id="comments" name="comments" onChange={handleChange} value={formData.comments}/>
         </label>
         <label>Overall Rating</label>
-        <input type="text" id="user_rating" name="user_rating" onChange={handleChange} value={formData.user_rating}/>
+        <input type="number" id="user_rating" name="user_rating" onChange={handleChange} value={formData.user_rating}/>
 
         <label>Scare Scale</label>
         <input type="number" id="scare_scale" name="scare_scale" onChange={handleChange} value={formData.scare_scale}/>
