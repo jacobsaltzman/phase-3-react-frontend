@@ -15,7 +15,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [reviews, setReviews] = useState([]);
-
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/movies")
@@ -42,6 +42,15 @@ function App() {
     setReviews([...reviews, newReview])
   }
 
+  function onAddUser(newUser){
+    setUsers([...users, newUser])
+  }
+
+  function onDeleteReview(deletedReview) {
+    const updatedReviews = reviews.filter((review) => review.id !== deletedReview.id);
+    setReviews(updatedReviews);
+  }
+
 
 
 
@@ -50,7 +59,7 @@ function App() {
       <Header isDarkMode={isDarkMode} handleDarkMode={handleDarkMode}/>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home onAddUser={onAddUser}/>
         </Route>
         <Route path='/movies'>
           <Movies movies={movies}/>
@@ -62,7 +71,7 @@ function App() {
           <NewMovieForm onAddMovie={onAddMovie}/>
         </Route>
         <Route path='/reviews'>
-          <Reviews reviews={reviews}/>
+          <Reviews reviews={reviews} onDeleteReview={onDeleteReview}/>
         </Route>
         <Route path='/review/new'>
           <NewReviewForm onAddReview={onAddReview}/>
