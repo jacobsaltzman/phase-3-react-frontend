@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function ReviewCard({review, onDeleteReview}){
 
   const {id, movie_id, user_id, comments, user_rating, scare_scale} = review;
   const [isEditMode, setIsEditMode] = useState(true);
+  const [reviewTitle, setReviewTitle] = useState();
+  // const [reviewUser, setReviewUser] = useState();
+
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/reviews/${review.id}/movie`)
+      .then((r) => r.json())
+      .then((data)=> setReviewTitle(data))
+  }, [])
 
   function handleEditMode(e){
     setIsEditMode(!isEditMode)
@@ -32,7 +41,7 @@ function handleEditReviewClick() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      isEditMode: !isEditMode,
+      // isEditMode: !isEditMode,
     }),
   })
     .then((r) => r.json())
@@ -47,7 +56,7 @@ function handleEditReviewClick() {
   return(
     <div className="review-card" id={id}>
       <button id='delete-review-button' type='submit' onClick={handleDeleteReview}>X</button>
-      <h3>{movie_id}</h3>
+      <h3>{reviewTitle}</h3>
       <h4>Reviewed by: {user_id}</h4>
       {isEditMode? <p>{comments}</p> : <input type='text' placeholder='Insert your new comment and submit!'><button type='submit' onSubmit={handleEditReviewClick}>Submit Update</button></input>}
       <button id='edit-review-button' type='submit'onClick={handleEditMode}>{isEditMode? 'edit?': 'nevermind!'}</button>
