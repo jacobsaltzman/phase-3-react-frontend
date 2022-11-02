@@ -7,6 +7,7 @@ function ReviewCard({review, onDeleteReview}){
   const [isEditMode, setIsEditMode] = useState(true);
   const [reviewTitle, setReviewTitle] = useState();
   const [reviewUser, setReviewUser] = useState();
+  const [formData, setFormData] = useState();
 
 
   useEffect(() => {
@@ -24,6 +25,10 @@ function ReviewCard({review, onDeleteReview}){
   function handleEditMode(e){
     setIsEditMode(!isEditMode)
 
+  }
+  function handleChange(e) {
+    const newComment = e.target.value;
+    setFormData((formData) => ([...formData, newComment]))
   }
 
   const handleDeleteReview = (e) => {
@@ -47,7 +52,7 @@ function handleEditReviewClick() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      // isEditMode: !isEditMode,
+      formData
     }),
   })
     .then((r) => r.json())
@@ -64,7 +69,9 @@ function handleEditReviewClick() {
       <button id='delete-review-button' type='submit' onClick={handleDeleteReview}>X</button>
       <h3 id={movie_id}>{reviewTitle}</h3>
       <h4 id={user_id}>Reviewed by: {reviewUser}</h4>
-      {isEditMode? <p>{comments}</p> : <input type='text' placeholder='Insert your new comment and submit!'><button type='submit' onSubmit={handleEditReviewClick}>Submit Update</button></input>}
+      
+      {isEditMode? <p>{comments}</p> : <div><input type='text' placeholder='Insert your new comment and submit!'></input><button type='submit' onChange={handleChange} onSubmit={handleEditReviewClick}>Submit Update</button></div>}
+      
       <button id='edit-review-button' type='submit'onClick={handleEditMode}>{isEditMode? 'edit?': 'nevermind!'}</button>
       <h5>User Rating: {user_rating}</h5>
       <h5>Scary Scale: {scare_scale}</h5>
