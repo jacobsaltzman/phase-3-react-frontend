@@ -139,9 +139,13 @@ section {
   position: relative; /* or absolute */
 }
 
-.review-card button{
+#delete-review-button{
   width: 20px;
   color: red;
   border: none;
   
+}
+
+#edit-review-button{
+  width: 50px;
 }
