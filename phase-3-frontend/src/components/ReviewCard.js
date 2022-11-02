@@ -26,10 +26,10 @@ function ReviewCard({review, onDeleteReview}){
     <div className="review-card" id={id}>
       <button type='submit' onClick={handleDeleteReview}>X</button>
       <h3>{movie_id}</h3>
-      <h4>{user_id}</h4>
+      <h4>Reviewed by: {user_id}</h4>
       <p>{comments}</p>
-      <h5>{user_rating}</h5>
-      <h6>{scare_scale}</h6>
+      <h5>User Rating: {user_rating}</h5>
+      <h5>Scary Scale: {scare_scale}</h5>
       
     </div>
   )
