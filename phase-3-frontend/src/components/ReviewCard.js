@@ -41,7 +41,7 @@ function ReviewCard({review, onDeleteReview}){
 }
 
 function handleEditReviewClick() {
-  fetch(`http://localhost:4000/items/${review.id}`, {
+  fetch(`http://localhost:4000/items/${review.id}/comments`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
