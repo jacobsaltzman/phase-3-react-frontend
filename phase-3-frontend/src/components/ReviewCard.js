@@ -6,14 +6,20 @@ function ReviewCard({review, onDeleteReview}){
   const {id, movie_id, user_id, comments, user_rating, scare_scale} = review;
   const [isEditMode, setIsEditMode] = useState(true);
   const [reviewTitle, setReviewTitle] = useState();
-  // const [reviewUser, setReviewUser] = useState();
+  const [reviewUser, setReviewUser] = useState();
 
 
   useEffect(() => {
     fetch(`http://localhost:9292/reviews/${review.id}/movie`)
       .then((r) => r.json())
       .then((data)=> setReviewTitle(data))
-  }, [])
+  }, [review.id])
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/reviews/${review.id}/user`)
+      .then((r) => r.json())
+      .then((data)=> setReviewUser(data))
+  }, [review.id])
 
   function handleEditMode(e){
     setIsEditMode(!isEditMode)
@@ -56,8 +62,8 @@ function handleEditReviewClick() {
   return(
     <div className="review-card" id={id}>
       <button id='delete-review-button' type='submit' onClick={handleDeleteReview}>X</button>
-      <h3>{reviewTitle}</h3>
-      <h4>Reviewed by: {user_id}</h4>
+      <h3 id={movie_id}>{reviewTitle}</h3>
+      <h4 id={user_id}>Reviewed by: {reviewUser}</h4>
       {isEditMode? <p>{comments}</p> : <input type='text' placeholder='Insert your new comment and submit!'><button type='submit' onSubmit={handleEditReviewClick}>Submit Update</button></input>}
       <button id='edit-review-button' type='submit'onClick={handleEditMode}>{isEditMode? 'edit?': 'nevermind!'}</button>
       <h5>User Rating: {user_rating}</h5>
