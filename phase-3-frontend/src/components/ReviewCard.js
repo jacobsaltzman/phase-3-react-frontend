@@ -27,8 +27,9 @@ function ReviewCard({review, onDeleteReview}){
 
   }
   function handleChange(e) {
-    const newComment = e.target.value;
-    setFormData((formData) => ([...formData, newComment]))
+    const value = e.target.value;
+    setFormData(value)
+    console.log(formData)
   }
 
   const handleDeleteReview = (e) => {
@@ -50,6 +51,7 @@ function handleEditReviewClick() {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
+      "Accept": "application/json",
     },
     body: JSON.stringify({
       formData
@@ -57,6 +59,7 @@ function handleEditReviewClick() {
   })
     .then((r) => r.json())
     .then((updatedItem) => console.log(updatedItem));
+    
 }
 
 
@@ -70,7 +73,7 @@ function handleEditReviewClick() {
       <h3 id={movie_id}>{reviewTitle}</h3>
       <h4 id={user_id}>Reviewed by: {reviewUser}</h4>
       
-      {isEditMode? <p>{comments}</p> : <div><input type='text' placeholder='Insert your new comment and submit!'></input><button type='submit' onChange={handleChange} onSubmit={handleEditReviewClick}>Submit Update</button></div>}
+      {isEditMode? <p>{comments}</p> : <div><input onChange={handleChange} type='text' placeholder='Insert your new comment and submit!'></input><button type='submit' onClick={handleEditReviewClick}>Submit Update</button></div>}
       
       <button id='edit-review-button' type='submit'onClick={handleEditMode}>{isEditMode? 'edit?': 'nevermind!'}</button>
       <h5>User Rating: {user_rating}</h5>
