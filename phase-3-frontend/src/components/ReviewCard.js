@@ -24,7 +24,7 @@ function ReviewCard({review, onDeleteReview, onEditReview}){
       .then((data)=> setReviewUser(data))
   }, [review.id])
 
-  function handleEditMode(e){
+  function handleEditMode(){
     setIsEditMode(!isEditMode)
 
   }
@@ -65,6 +65,7 @@ function handleEditReviewClick() {
     onEditReview(updatedItems)
   });
   setFormData("")
+  handleEditMode()
   alert("Edit complete.")
 }
 
