@@ -1,7 +1,7 @@
 import React from "react";
 import ReviewCard from './ReviewCard'
 
-function ReviewContainer({reviews, onDeleteReview}){
+function ReviewContainer({reviews, onDeleteReview, onEditReview}){
 
   return(
     <ul className="review-container">
@@ -11,6 +11,7 @@ function ReviewContainer({reviews, onDeleteReview}){
           key={review.id}
           review={review}
           onDeleteReview={onDeleteReview}
+          onEditReview={onEditReview}
           />
         )
       })}

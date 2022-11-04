@@ -41,6 +41,17 @@ function App() {
   function onAddReview(newReview){
     setReviews([...reviews, newReview])
   }
+  
+  function onEditReview(updatedReview){
+    const updatedReviews = reviews.map((review) => {
+      if (review.id === updatedReview.id) {
+        return updatedReview;
+      } else {
+        return review;
+      }
+    });
+    setReviews(updatedReviews);
+  }
 
   function onAddUser(newUser){
     setUsers([...users, newUser])
@@ -71,7 +82,7 @@ function App() {
           <NewMovieForm onAddMovie={onAddMovie}/>
         </Route>
         <Route path='/reviews'>
-          <Reviews reviews={reviews} onDeleteReview={onDeleteReview}/>
+          <Reviews reviews={reviews} onDeleteReview={onDeleteReview} onEditReview={onEditReview}/>
         </Route>
         <Route path='/review/new'>
           <NewReviewForm onAddReview={onAddReview}/>

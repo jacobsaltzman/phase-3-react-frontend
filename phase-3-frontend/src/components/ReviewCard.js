@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 
-function ReviewCard({review, onDeleteReview}){
+function ReviewCard({review, onDeleteReview, onEditReview}){
 
   const {id, movie_id, user_id, comments, user_rating, scare_scale} = review;
   const [isEditMode, setIsEditMode] = useState(true);
   const [reviewTitle, setReviewTitle] = useState();
   const [reviewUser, setReviewUser] = useState();
   const [formData, setFormData] = useState();
+
+  
 
 
   useEffect(() => {
@@ -59,8 +61,11 @@ function handleEditReviewClick() {
     }),
   })
     .then((r) => r.json())
-    .then((updatedItems) => console.log(updatedItems));
-    
+    .then((updatedItems) => {
+    onEditReview(updatedItems)
+  });
+  setFormData("")
+  alert("Edit complete.")
 }
 
 
