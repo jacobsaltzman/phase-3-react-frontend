@@ -29,7 +29,7 @@ function ReviewCard({review, onDeleteReview}){
   function handleChange(e) {
     const value = e.target.value;
     setFormData(value)
-    console.log(formData)
+    console.log(value)
   }
 
   const handleDeleteReview = (e) => {
@@ -47,18 +47,19 @@ function ReviewCard({review, onDeleteReview}){
 }
 
 function handleEditReviewClick() {
-  fetch(`http://localhost:9292/reviews/${review.id}/comments`, {
+  // console.log(review.id)
+  fetch(`http://localhost:9292/reviews/${review.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
     },
     body: JSON.stringify({
-      formData
+        comments: formData
     }),
   })
     .then((r) => r.json())
-    .then((updatedItem) => console.log(updatedItem));
+    .then((updatedItems) => console.log(updatedItems));
     
 }
 
