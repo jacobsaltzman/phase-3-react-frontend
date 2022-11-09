@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 
 function ReviewCard({review, onDeleteReview, onEditReview}){
 
-  const {id, movie_id, user_id, comments, user_rating, scare_scale} = review;
+  const {id, movie_id, user_id, comments, user_rating, scare_scale, user} = review;
   const [isEditMode, setIsEditMode] = useState(true);
   const [formData, setFormData] = useState();
-
+  
   //deleted fetch requests for movie title and user names. Need to fix the nested json data coming in to grab those items using only the origin fetch and appropriate methods
 
 
@@ -60,7 +60,7 @@ function handleEditReviewClick() {
     <div className="review-card" id={id}>
       <button id='delete-review-button' type='submit' onClick={handleDeleteReview}>X</button>
       <h3 id={movie_id}>{review.title}</h3>
-      <h4 id={user_id}>Reviewed by: </h4>
+      <h4 id={user_id}>Reviewed by: {user.username}</h4>
       
       {isEditMode? <p>{comments}</p> : <div><input onChange={handleChange} type='text' placeholder='Insert your new comment and submit!'></input><button type='submit' onClick={handleEditReviewClick}>Submit Update</button></div>}
       
