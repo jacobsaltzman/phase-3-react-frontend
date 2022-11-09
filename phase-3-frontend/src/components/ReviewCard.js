@@ -55,6 +55,7 @@ function handleEditReviewClick() {
   return(
     <div className="review-card" id={id}>
       <button id='delete-review-button' type='submit' onClick={handleDeleteReview}>X</button>
+      <img src={movie.image} alt={movie.title}/>
       <h3 id={movie_id}>{movie.title}</h3>
       <h4 id={user_id}>Reviewed by: {user.username}</h4>
       
