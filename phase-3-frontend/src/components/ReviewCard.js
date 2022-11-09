@@ -17,7 +17,7 @@ function ReviewCard({review, onDeleteReview, onEditReview}){
   function handleChange(e) {
     const value = e.target.value;
     setFormData(value)
-    console.log(value)
+    //console.log(value)
   }
 
   const handleDeleteReview = (e) => {
@@ -62,7 +62,7 @@ function handleEditReviewClick() {
       <h3 id={movie_id}>{review.title}</h3>
       <h4 id={user_id}>Reviewed by: {user.username}</h4>
       
-      {isEditMode? <p>{comments}</p> : <div><input onChange={handleChange} type='text' placeholder='Insert your new comment and submit!'></input><button type='submit' onClick={handleEditReviewClick}>Submit Update</button></div>}
+      {isEditMode? <p>{comments}</p> : <div><input onChange={handleChange} type='text' placeholder='Insert your new comment!'></input><button type='submit' onClick={handleEditReviewClick}>Submit Update</button></div>}
       
       <button id='edit-review-button' type='submit'onClick={handleEditMode}>{isEditMode? 'edit?': 'nevermind!'}</button>
       <h5>User Rating: {user_rating}</h5>
