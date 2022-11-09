@@ -9,7 +9,6 @@ function ReviewCard({review, onDeleteReview, onEditReview}){
 
   //deleted fetch requests for movie title and user names. Need to fix the nested json data coming in to grab those items using only the origin fetch and appropriate methods
 
-  console.log(user)
 
   function handleEditMode(){
     setIsEditMode(!isEditMode)
