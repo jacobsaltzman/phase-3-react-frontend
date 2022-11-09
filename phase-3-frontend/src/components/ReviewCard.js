@@ -6,9 +6,10 @@ function ReviewCard({review, onDeleteReview, onEditReview}){
   const {id, movie_id, user_id, comments, user_rating, scare_scale, user} = review;
   const [isEditMode, setIsEditMode] = useState(true);
   const [formData, setFormData] = useState();
-  
+
   //deleted fetch requests for movie title and user names. Need to fix the nested json data coming in to grab those items using only the origin fetch and appropriate methods
 
+  console.log(user)
 
   function handleEditMode(){
     setIsEditMode(!isEditMode)

@@ -4,6 +4,8 @@ import React, {useState} from "react";
 function NewReviewForm({ onAddReview }){
 
   const[formData, setFormData] = useState({
+    movie_id: 1,
+    user_id: 2,
     comments: "",
     user_rating: 0,
     scare_scale: 0
@@ -29,6 +31,8 @@ function NewReviewForm({ onAddReview }){
       .then((data) => {
         onAddReview(data)
         setFormData({
+          movie_id: 1,
+          user_id: 2,
           comments: "",
           user_rating: 0,
           scare_scale: 0
