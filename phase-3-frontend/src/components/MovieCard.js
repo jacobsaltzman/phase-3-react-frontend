@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReviewStats from './ReviewStats';
 
 
 function MovieCard({movie}){
@@ -28,6 +29,7 @@ function MovieCard({movie}){
       <h3>Directed by: {director}</h3> 
       <p>{title} is a {subgenre} horror movie, originally released in {year}</p>
       <button onClick={handleIsSeen}>{isSeen? 'More Info':'Less info'}</button>
+      <div>{isSeen?"Click to check out the reviews":<ReviewStats id={id}/>}</div>
       <div id='more-info'>
       </div>
       <div className="background" style={sectionStyle}></div>
