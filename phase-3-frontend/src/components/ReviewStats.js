@@ -13,7 +13,7 @@ function ReviewStats({id}){
   }, [id])
   
   if (reviews !== undefined){
-
+    console.log(reviews[1].user.username)
     
   return(
     <div>
@@ -21,7 +21,7 @@ function ReviewStats({id}){
      <ul className='review-list'>
       {reviews.map((review) => {
         return(
-          <li id={review.id} key={review.id}>{review.comments}</li>
+          <li id={review.id} key={review.id}>"{review.comments}" - by {review.user.username}</li>
         )
       })}
      </ul>
