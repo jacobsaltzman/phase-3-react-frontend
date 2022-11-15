@@ -14,11 +14,11 @@ function ReviewStats({id}){
   
   if (reviews !== undefined){
 
-    console.log(reviews[1].comments)
+    
   return(
     <div>
      <h3>There are {reviews.length} reviews for this movie!</h3>
-     <ul>
+     <ul className='review-list'>
       {reviews.map((review) => {
         return(
           <li id={review.id} key={review.id}>{review.comments}</li>
