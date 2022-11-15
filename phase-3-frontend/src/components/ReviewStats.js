@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 function ReviewStats({id}){
 
-  const [reviews, setReviews] = useState();
+  const [movie, setMovie] = useState();
 
   useEffect(() => {
     fetch(`http://localhost:9292/movies/${id}`)
       .then((r) => r.json())
-      .then((data)=> setReviews(data))
+      .then((data)=> setMovie(data))
   }, [id])
 
-  console.log(reviews)
+  console.log(movie)
 
   return(
     <div>
