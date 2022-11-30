@@ -14,7 +14,7 @@ function ReviewStats({id}){
   }, [id])
   
   if (reviews !== undefined){
-    console.log(reviews[1].user.username)
+    //console.log(reviews[1].user.username)
     
   return(
     <div>
