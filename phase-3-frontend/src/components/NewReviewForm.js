@@ -4,8 +4,8 @@ import React, {useState} from "react";
 function NewReviewForm({ onAddReview }){
 
   const[formData, setFormData] = useState({
-    movie_id: 1,
-    user_id: 2,
+    movie_id: 1, //need to fix to make more dynamic
+    user_id: 2, //user is hard-coded to mimic login which will be next Phase
     comments: "",
     user_rating: 0,
     scare_scale: 0
@@ -31,8 +31,8 @@ function NewReviewForm({ onAddReview }){
       .then((data) => {
         onAddReview(data)
         setFormData({
-          movie_id: 1,
-          user_id: 2,
+          movie_id: 1, //need to fix to make more dynamic
+          user_id: 2, //hard-coded to mimic login functionality
           comments: "",
           user_rating: 0,
           scare_scale: 0
