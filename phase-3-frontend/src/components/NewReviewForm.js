@@ -31,7 +31,7 @@ function NewReviewForm({ onAddReview }){
       .then((data) => {
         onAddReview(data)
         setFormData({
-          movie_id: 1, //need to fix to make more dynamic
+          movie_id: 1, //checking git status
           user_id: 2, //hard-coded to mimic login functionality
           comments: "",
           user_rating: 0,
