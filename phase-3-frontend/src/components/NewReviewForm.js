@@ -1,10 +1,16 @@
 import React, {useState} from "react";
+import { useLocation } from "react-router-dom";
 
 
 function NewReviewForm({ onAddReview }){
 
+  const location = useLocation()
+  const movie_num = location.state.id
+
+  //console.log(location.state.id)
+
   const[formData, setFormData] = useState({
-    movie_id: 1, //need to fix to make more dynamic
+    movie_id: movie_num, //need to fix to make more dynamic
     user_id: 2, //user is hard-coded to mimic login which will be next Phase
     comments: "",
     user_rating: 0,
@@ -31,7 +37,7 @@ function NewReviewForm({ onAddReview }){
       .then((data) => {
         onAddReview(data)
         setFormData({
-          movie_id: 1, //checking git status
+          movie_id: movie_num, //checking git status
           user_id: 2, //hard-coded to mimic login functionality
           comments: "",
           user_rating: 0,

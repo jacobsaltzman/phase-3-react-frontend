@@ -26,7 +26,7 @@ function ReviewStats({id}){
         )
       })}
      </ul>
-     <Link to="review/new" id="review-button">Add A Review</Link>
+     <Link to={{pathname: "review/new", state:{id} }} id="review-button">Add A Review</Link>
     </div>
   )
 
