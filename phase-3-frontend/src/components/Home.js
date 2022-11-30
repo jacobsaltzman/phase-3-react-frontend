@@ -11,6 +11,9 @@ function Home(){
   }
 
 
+  //work in progress. Waiting until Rails to include full user functionality
+
+
   return (
     <section>
       <h2>A scary movie DB.</h2>

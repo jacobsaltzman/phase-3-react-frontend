@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 const Header = ({handleDarkMode, isDarkMode}) => {
 
+
+  //work in progress. Waiting until Rails to include full user functionality
   
   return(
     <header className="App-header">
