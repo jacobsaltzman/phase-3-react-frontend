@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function ReviewStats({id}){
 
@@ -25,6 +26,7 @@ function ReviewStats({id}){
         )
       })}
      </ul>
+     <Link to="review/new" id="review-button">Add A Review</Link>
     </div>
   )
 

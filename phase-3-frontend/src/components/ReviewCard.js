@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
 
 
 function ReviewCard({review, onDeleteReview, onEditReview}){
@@ -65,7 +64,6 @@ function handleEditReviewClick() {
       <button id='edit-review-button' type='submit'onClick={handleEditMode}>{isEditMode? 'edit?': 'nevermind!'}</button>
       <h5>User Rating: {user_rating}</h5>
       <h5>Scary Scale: {scare_scale}</h5>
-      <Link to="review/new" id="review-button">Add A Review</Link>
     </div>
   )
 }
