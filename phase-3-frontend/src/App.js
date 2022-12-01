@@ -77,7 +77,7 @@ function App() {
       <Header isDarkMode={isDarkMode} handleDarkMode={handleDarkMode}/>
       <Switch>
         <Route exact path="/">
-          <Home onAddUser={onAddUser}/>
+          <Home onAddUser={onAddUser} users={users}/>
         </Route>
         <Route path='/movies'>
           <Movies movies={movies}/>

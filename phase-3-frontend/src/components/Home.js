@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 
 
-function Home( { onAddUser }){
+function Home( { onAddUser, users }){
 
   const [pwShown, setPwShown] = useState(false);
 
@@ -50,6 +50,14 @@ function Home( { onAddUser }){
   return (
     <section>
       <h2>A scary movie DB.</h2>
+      <h4>(Join our growing list of horror reviewers)</h4>
+      <ul>
+      {users.map((user) => {
+        return(
+          <li id={user.id} key={user.id}>"{user.username}"</li>
+        )
+      })}
+      </ul>
       <div id="sign-up">
       <h4>Sign Up</h4>
       <form  id="sign-up-form" onSubmit={handleSubmit}>
