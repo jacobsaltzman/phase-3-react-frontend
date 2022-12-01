@@ -29,6 +29,13 @@ function App() {
       .then((data)=> setReviews(data))
   }, [])
 
+  
+  useEffect(() => {
+    fetch("http://localhost:9292/users")
+      .then((r) => r.json())
+      .then((data)=> setUsers(data))
+  }, [])
+
 
   function handleDarkMode(e){
     setIsDarkMode(!isDarkMode)
