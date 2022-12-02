@@ -1,5 +1,23 @@
 # Phase 3 Project Horror Rater -- Frontend UI
 
+## Second branch
+
+
+-Adds the functionality to creating a new user and "read" all users on the page.
+
+
+-Adds the ability to dynamically select the movie that you want to review.
+
+
+-The User model now has a read and create ability.
+
+-The Review has read, create, delete, and update.
+
+-The one-to-many is the User to the Reviews.
+
+-There are also additional parts for future changes. 
+
+
 ## What is it?
 
 - A comprehensive list of horror movies with details for each, including director, release date, and sub-genre. Among that list, movies can have reviews where "users" post comments and ratings, both on overall quality of the film and the scariness factor.
