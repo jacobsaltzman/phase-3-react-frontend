@@ -56,7 +56,7 @@ function ReviewStats({id, reviews}){
   }
 
   function onEditReview(updatedReview){
-    const updatedReviews = reviews.map((review) => {
+    const updatedReviews = allReviews.map((review) => {
       if (review.id === updatedReview.id) {
         return updatedReview;
       } else {
@@ -67,7 +67,7 @@ function ReviewStats({id, reviews}){
   }
 
   function onDeleteReview(deletedReview) {
-    const updatedReviews = reviews.filter((review) => review.id !== deletedReview.id);
+    const updatedReviews = allReviews.filter((review) => review.id !== deletedReview.id);
     setAllReviews(updatedReviews);
   }
   
