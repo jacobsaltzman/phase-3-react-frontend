@@ -8,7 +8,8 @@ function NewMovieForm({ onAddMovie }){
     director: "",
     subgenre: "",
     year: "",
-    image: ""
+    image: "",
+    reviews: []
   })
 
   function handleChange(e) {
@@ -35,7 +36,8 @@ function NewMovieForm({ onAddMovie }){
           director: "",
           subgenre: "",
           year: "",
-          image: ""
+          image: "",
+          reviews: []
         });
       });
       alert("Added to the Movies DB! Thanks for contributing");

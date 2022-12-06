@@ -74,7 +74,6 @@ function ReviewStats({id, reviews}){
 
   return(
     <div>
-     <h3>There are {allReviews.length} reviews for this movie!</h3>
      <Reviews reviews={allReviews} onEditReview={onEditReview} onDeleteReview={onDeleteReview}/>
      <section>
       <form className="new-review-form" onSubmit={handleSubmit}>
