@@ -136,7 +136,11 @@ section {
   border: 2px solid;
   border-radius: 10px;
   border-bottom: 5px solid;
-  position: relative; /* or absolute */
+  position: relative;
+}
+
+.review-container{
+  display: flex;
 }
 
 #delete-review-button{
