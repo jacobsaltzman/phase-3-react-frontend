@@ -1,5 +1,13 @@
 # Phase 3 Project Horror Rater -- Frontend UI
 
+
+# Update!! Third Branch Changes:
+
+-Removes extra fetch requests and uses the nested data to populate information
+-Collapses several components into one to simplify the UI 
+-Makes the review cards and its functionality render directly on the main movie page. 
+-Removes the "signin" component for now until next phase
+
 ## Description
   
 
