@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 function ReviewCard({review, onDeleteReview, onEditReview}){
 
-  const {id, movie_id, user_id, comments, user_rating, scare_scale, user, movie} = review;
+  const {id, comments, user_rating, scare_scale} = review;
   const [isEditMode, setIsEditMode] = useState(true);
   const [formData, setFormData] = useState();
  
@@ -55,9 +55,7 @@ function handleEditReviewClick() {
   return(
     <div className="review-card" id={id}>
       <button id='delete-review-button' type='submit' onClick={handleDeleteReview}>X</button>
-      <img src={movie.image} alt={movie.title}/>
-      <h3 id={movie_id}>{movie.title}</h3>
-      <h4 id={user_id}>Reviewed by: {user.username}</h4>
+
       
       {isEditMode? <p>{comments}</p> : <div><input onChange={handleChange} type='text' placeholder='Insert your new comment!'></input><button type='submit' onClick={handleEditReviewClick}>Submit Update</button></div>}
       

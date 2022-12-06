@@ -28,7 +28,6 @@ function MovieCard({movie}){
       <div><ReviewStats id={id} reviews={reviews}/></div>
       <div id='more-info'>
       </div>
-      <div className="background" style={sectionStyle}></div>
     </div>
   )
 }

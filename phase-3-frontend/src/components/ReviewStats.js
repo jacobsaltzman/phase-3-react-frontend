@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Reviews from "./Reviews";
 
 
 function ReviewStats({id, reviews}){
@@ -53,18 +54,28 @@ function ReviewStats({id, reviews}){
     setAllReviews([...allReviews, newReview])
     }
   }
+
+  function onEditReview(updatedReview){
+    const updatedReviews = reviews.map((review) => {
+      if (review.id === updatedReview.id) {
+        return updatedReview;
+      } else {
+        return review;
+      }
+    });
+    setAllReviews(updatedReviews);
+  }
+
+  function onDeleteReview(deletedReview) {
+    const updatedReviews = reviews.filter((review) => review.id !== deletedReview.id);
+    setAllReviews(updatedReviews);
+  }
   
 
   return(
     <div>
      <h3>There are {allReviews.length} reviews for this movie!</h3>
-     <ul className='review-list'>
-      {allReviews.map((review) => {
-        return(
-          <li id={review.id} key={review.id}>"{review.comments}"</li>
-        )
-      })}
-     </ul>
+     <Reviews reviews={allReviews} onEditReview={onEditReview} onDeleteReview={onDeleteReview}/>
      <section>
       <form className="new-review-form" onSubmit={handleSubmit}>
         <h3>Add Review</h3>
