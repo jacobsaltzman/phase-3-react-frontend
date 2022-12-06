@@ -7,7 +7,7 @@ import Movies from './components/Movies';
 import NewMovieForm from './components/NewMovieForm';
 import Signin from './components/Signin';
 import Reviews from './components/Reviews';
-import NewReviewForm from './components/NewReviewForm';
+
 
 
 function App() {
@@ -45,10 +45,7 @@ function App() {
     setMovies([...movies, newMovie])
   }
 
-  function onAddReview(newReview){
-    setReviews([...reviews, newReview])
-  }
-  
+
   function onEditReview(updatedReview){
     const updatedReviews = reviews.map((review) => {
       if (review.id === updatedReview.id) {
@@ -90,9 +87,6 @@ function App() {
         </Route>
         <Route path='/reviews'>
           <Reviews reviews={reviews} onDeleteReview={onDeleteReview} onEditReview={onEditReview}/>
-        </Route>
-        <Route path='/review/new'>
-          <NewReviewForm onAddReview={onAddReview}/>
         </Route>
       </Switch>
       <Footer />
