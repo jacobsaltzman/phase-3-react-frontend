@@ -7,6 +7,10 @@
 -Makes the review cards and its functionality render directly on the main movie page. 
 -Removes the "signin" component for now until next phase
 
+
+![image](https://user-images.githubusercontent.com/55026856/205878282-992b2625-2fba-4395-beb8-f3193f835a94.png)
+
+
 ## Description
   
 
