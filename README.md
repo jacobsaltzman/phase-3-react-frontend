@@ -87,6 +87,14 @@ In this frontend app, users can:
 To launch the app `cd` into the main project directory. Once there, run:
 
 ```console
+$ npm install
+```
+
+
+to install all the dependencies.
+
+
+```console
 $ npm start
 ```
 
