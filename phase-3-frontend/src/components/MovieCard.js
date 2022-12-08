@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReviewStats from './ReviewStats';
 
 
 function MovieCard({movie}){
 
-  const [isSeen, setIsSeen] = useState(true);
+  const { id, title, director, year, subgenre, image, reviews } = movie;
 
-  const { id, title, director, year, subgenre, image } = movie;
 
   const sectionStyle = {
     width: "100%",
@@ -18,9 +17,7 @@ function MovieCard({movie}){
     backgroundPosition: "center"
   }
 
-  function handleIsSeen(e){
-    setIsSeen(!isSeen)
-  }
+
 
   return(
     <div className="card" id={id}>
@@ -28,11 +25,9 @@ function MovieCard({movie}){
       <h1>{title}</h1>
       <h3>Directed by: {director}</h3> 
       <p>{title} is a {subgenre} horror movie, originally released in {year}</p>
-      <button onClick={handleIsSeen}>{isSeen? 'More Info':'Less info'}</button>
-      <div>{isSeen?"Click to check out the reviews":<ReviewStats id={id}/>}</div>
+      <div><ReviewStats id={id} reviews={reviews}/></div>
       <div id='more-info'>
       </div>
-      <div className="background" style={sectionStyle}></div>
     </div>
   )
 }

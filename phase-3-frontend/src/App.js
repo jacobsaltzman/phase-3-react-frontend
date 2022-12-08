@@ -6,15 +6,15 @@ import Home from './components/Home';
 import Movies from './components/Movies';
 import NewMovieForm from './components/NewMovieForm';
 import Signin from './components/Signin';
-import Reviews from './components/Reviews';
-import NewReviewForm from './components/NewReviewForm';
+
+
 
 
 function App() {
 
   const [movies, setMovies] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [reviews, setReviews] = useState([]);
+ 
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -23,10 +23,11 @@ function App() {
       .then((data)=> setMovies(data))
   }, [])
 
+  
   useEffect(() => {
-    fetch("http://localhost:9292/reviews")
+    fetch("http://localhost:9292/users")
       .then((r) => r.json())
-      .then((data)=> setReviews(data))
+      .then((data)=> setUsers(data))
   }, [])
 
 
@@ -38,28 +39,11 @@ function App() {
     setMovies([...movies, newMovie])
   }
 
-  function onAddReview(newReview){
-    setReviews([...reviews, newReview])
-  }
+
   
-  function onEditReview(updatedReview){
-    const updatedReviews = reviews.map((review) => {
-      if (review.id === updatedReview.id) {
-        return updatedReview;
-      } else {
-        return review;
-      }
-    });
-    setReviews(updatedReviews);
-  }
 
   function onAddUser(newUser){
     setUsers([...users, newUser])
-  }
-
-  function onDeleteReview(deletedReview) {
-    const updatedReviews = reviews.filter((review) => review.id !== deletedReview.id);
-    setReviews(updatedReviews);
   }
 
 
@@ -70,7 +54,7 @@ function App() {
       <Header isDarkMode={isDarkMode} handleDarkMode={handleDarkMode}/>
       <Switch>
         <Route exact path="/">
-          <Home onAddUser={onAddUser}/>
+          <Home onAddUser={onAddUser} users={users}/>
         </Route>
         <Route path='/movies'>
           <Movies movies={movies}/>
@@ -80,12 +64,6 @@ function App() {
         </Route>
         <Route path='/new'>
           <NewMovieForm onAddMovie={onAddMovie}/>
-        </Route>
-        <Route path='/reviews'>
-          <Reviews reviews={reviews} onDeleteReview={onDeleteReview} onEditReview={onEditReview}/>
-        </Route>
-        <Route path='/review/new'>
-          <NewReviewForm onAddReview={onAddReview}/>
         </Route>
       </Switch>
       <Footer />
